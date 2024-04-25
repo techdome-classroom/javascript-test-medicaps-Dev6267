@@ -1,7 +1,3 @@
-function longestSubstring(s) {
-    // Implementation of longestSubstring function
-}
-
 
 
 
