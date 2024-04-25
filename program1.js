@@ -19,6 +19,6 @@ function findLongestSubstring(str) {
 }
 
 const input = "javascriptexamplecodes";
-const result = findLongestSubstringValue(input);
+const result = findLongestSubstring(input);
 console.log(result);
 module.exports = { longestSubstring };
