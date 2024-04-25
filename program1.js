@@ -1,20 +1,19 @@
-function findLongestSubstring(str) {
-    let longestValue = 0;
-    let startValue = 0;
-    let seenValue = {};
-    
-    for (let end = 0; end < str.length; end++) {
-        if (seenValue[str[end]]) {
-            startValue = Math.max(startValue, seenValue[str[end]]);
+function lengthOfLongestSubstring(s) {
+    let maxLength = 0;
+    let start = 0;
+    const charIndexMap = {};
+
+    for (let end = 0; end < s.length; end++) {
+        const char = s[end];
+        if (charIndexMap[char] !== undefined && charIndexMap[char] >= start) {
+            start = charIndexMap[char] + 1;
         }
-        
-        longestValue = Math.max(longestValue, end - startValue + 1);
-        seenValue[str[end]] = end + 1;
+        charIndexMap[char] = end;
+        maxLength = Math.max(maxLength, end - start + 1);
     }
-    
-    return longestValue;
+
+    return maxLength;
 }
 
-const input = "javascriptexamplecodes";
-const result = findLongestSubstring(input);
-console.log(result);
+// Test case
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
