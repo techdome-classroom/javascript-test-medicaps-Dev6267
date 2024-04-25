@@ -1,6 +1,3 @@
-
-
-
 function findLongestSubstring(str) {
     let longestValue = 0;
     let startValue = 0;
